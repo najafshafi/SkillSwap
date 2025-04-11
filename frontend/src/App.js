@@ -21,6 +21,7 @@ import Signup from "./pages/Signup";
 import Profile from "./pages/Profile"; // Corrected import
 import EnrolledCourses from "./pages/EnrolledCourses"; // New page for enrolled courses
 import AddCourse from "./pages/Admin/AddCourse"; // Admin page for adding courses
+import ManageCourses from "./pages/Admin/ManageCourses"; // Admin page for managing courses
 import CourseView from "./pages/CourseView"; // Dynamic course view component
 import { AuthProvider, useAuth } from "./utils/AuthContext";
 
@@ -122,6 +123,14 @@ const AppContent = () => {
           element={
             <AdminRoute>
               <AddCourse />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/manage-courses"
+          element={
+            <AdminRoute>
+              <ManageCourses />
             </AdminRoute>
           }
         />

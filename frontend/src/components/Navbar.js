@@ -14,6 +14,7 @@ const AppNavbar = ({ navbarProfilePic, showEnrolledCourses, isAdmin }) => {
     logout();
   };
 
+
   return (
     <Navbar expand="lg" bg="light" variant="light" className="shadow-sm">
       <Container>
@@ -73,15 +74,27 @@ const AppNavbar = ({ navbarProfilePic, showEnrolledCourses, isAdmin }) => {
                     {isAdmin && (
                       <>
                         <Dropdown.Divider />
-                        <Dropdown.Item className="fw-bold text-primary">Admin Menu</Dropdown.Item>
+                        <Dropdown.Item className="fw-bold text-primary pe-none">Admin Menu</Dropdown.Item>
                         <Dropdown.Item as={Link} to="/admin/add-course">
                           Add New Course
+                        </Dropdown.Item>
+                        <Dropdown.Item as={Link} to="/admin/manage-courses">
+                          Manage Courses
                         </Dropdown.Item>
                       </>
                     )}
 
                     <Dropdown.Divider />
-                    <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
+                    <Dropdown.Item
+                      style={{ transition: '0.3s' }}
+                      onMouseOver={(e) => {
+                        e.target.style.backgroundColor = '#f8d7da';
+                      }}
+                      onMouseOut={(e) => {
+                        e.target.style.backgroundColor = 'transparent';
+                      }}
+
+                      onClick={handleLogout}>Logout</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </>

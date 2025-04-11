@@ -32,13 +32,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 app.set("view engine", "ejs");
 
-// Log requests in development
-if (process.env.NODE_ENV === 'development') {
-    app.use((req, res, next) => {
-        console.log(`${req.method} ${req.url}`);
-        next();
-    });
-}
+// Detailed request logging for all environments
+app.use((req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+    console.log(`Headers: Authorization: ${req.headers.authorization ? 'Present' : 'Missing'}`);
+    next();
+});
 
 // Routes
 app.use('/api/auth', authRoutes);
@@ -47,8 +46,25 @@ app.use('/api/users', userRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/courses', courseRoutes);
 
+// Root route
 app.get('/', (req, res) => {
     res.send("SkillSwap API is running...");
+});
+
+// 404 handler for undefined routes
+app.use((req, res) => {
+    console.log(`[404] Route not found: ${req.method} ${req.url}`);
+    res.status(404).json({
+        message: 'Route not found',
+        path: req.url,
+        method: req.method
+    });
+});
+
+// Error handler
+app.use((err, req, res, next) => {
+    console.error('Server error:', err);
+    res.status(500).json({ message: 'Internal server error', error: err.message });
 });
 
 const PORT = process.env.PORT || 5001;

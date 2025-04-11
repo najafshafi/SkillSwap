@@ -181,6 +181,73 @@ export const courseApi = {
         } catch (error) {
             throw error.response ? error.response.data : { message: 'Network error' };
         }
+    },
+
+    updateCourse: async (courseId, courseData) => {
+        try {
+            // Handle multipart form data for course image upload
+            const formData = new FormData();
+
+            // Add all text fields to form data
+            Object.keys(courseData).forEach(key => {
+                if (key !== 'courseImage') {
+                    formData.append(key, courseData[key]);
+                }
+            });
+
+            // Add image if provided
+            if (courseData.courseImage) {
+                formData.append('courseImage', courseData.courseImage);
+            }
+
+            const response = await api.put(`/courses/admin/course/${courseId}`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+
+            return response.data;
+        } catch (error) {
+            throw error.response ? error.response.data : { message: 'Network error' };
+        }
+    },
+
+    deleteCourse: async (courseId) => {
+        try {
+            const response = await api.delete(`/courses/admin/course/${courseId}`);
+            return response.data;
+        } catch (error) {
+            throw error.response ? error.response.data : { message: 'Network error' };
+        }
+    },
+
+    getAdminCourses: async () => {
+        try {
+            console.log('Making API request to:', api.defaults.baseURL + '/courses/admin/courses');
+
+            // Log request headers for debugging
+            const token = localStorage.getItem('token');
+            console.log('Authorization token exists:', !!token);
+
+            const response = await api.get('/courses/admin/courses');
+            console.log('Admin courses response:', response.status);
+            return response.data;
+        } catch (error) {
+            console.error('Admin courses request failed:', error);
+            if (error.response) {
+                console.error('Server response status:', error.response.status);
+                console.error('Server response data:', error.response.data);
+                throw {
+                    ...error.response.data,
+                    status: error.response.status
+                };
+            } else if (error.request) {
+                console.error('No response received:', error.request);
+                throw { message: 'No response from server. Please check your connection.' };
+            } else {
+                throw { message: error.message || 'Network error' };
+            }
+        }
     }
 };
 

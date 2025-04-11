@@ -39,7 +39,7 @@ const EnrolledCourses = () => {
     const handleContinueCourse = (courseUrl) => {
         navigate(`/course/${courseUrl}`);
     };
-
+    console.log(enrolledCourses)
     return (
         <Container className="py-5">
             <h1 className="mb-4 text-center">My Enrolled Courses</h1>
@@ -75,7 +75,7 @@ const EnrolledCourses = () => {
                                         className="course-img"
                                         onError={(e) => {
                                             e.target.onerror = null;
-                                            e.target.src = "/images/default-course.jpg";
+                                            e.target.src = "/images/default-course.jpeg";
                                         }}
                                     />
                                     <div className="enrollment-date position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white p-2">
