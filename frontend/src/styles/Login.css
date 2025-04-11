@@ -1,0 +1,137 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Main Login Container */
+.login-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+/* Login Row */
+.login-row {
+    width: 65%; /* Increased Width */
+    max-width: 900px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+/* Glow Effect */
+.login-row:hover {
+    box-shadow: 0px 0px 25px rgba(111, 66, 193, 0.6);
+    transform: scale(1.02);
+}
+
+/* Left Side - Form */
+.login-form-container {
+    padding: 40px;
+    width: 60%;
+}
+
+/* Title */
+.login-form h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Subtitle */
+.login-form p {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+/* Form Fields */
+.login-form .form-control {
+    width: 100%;
+    border-radius: 6px;
+    height: 45px;
+    font-size: 14px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    padding-left: 10px;
+}
+
+/* Buttons */
+.login-btn, .google-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+}
+
+.login-btn {
+    background-color: #6f42c1;
+    border: none;
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #5a32a3;
+    box-shadow: 0px 0px 15px rgba(111, 66, 193, 0.6);
+}
+
+.google-btn {
+    background-color: white;
+    border: 1px solid #ddd;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-btn:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Side - Illustration */
+.login-illustration {
+    width: 40%;
+    background: linear-gradient(135deg, #6f42c1, #9b59b6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* Placeholder for Image */
+.illustration {
+    width: 80%;
+    height: 80%;    background: url("../assets/image2.png") no-repeat center/cover;
+
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .login-row {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .login-form-container {
+        width: 100%;
+    }
+
+    .login-illustration {
+        width: 100%;
+        height: 200px;
+    }
+}
+

@@ -1,0 +1,145 @@
+/* Navbar Styling */
+
+
+
+.navbar {
+  padding: 3px 15px !important;
+  min-height: 35px !important;
+  background: #eae1e1 !important;
+  box-shadow: 0px 2px 6px rgba(169, 7, 7, 0.08) !important;
+  transition: all 0.4s ease-in-out !important;
+}
+
+
+/* Navbar Brand (Logo) */
+.navbar-brand {
+  font-size: 20px; /* Bigger text for better visibility */
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+  color: #007bff;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  font-size: 17px; /* Text size thoda bara rakha */
+  font-weight: 500;
+  color: #444;
+  margin: 0 12px;
+  padding: 10px 0; /* Better spacing */
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Underline Animation on Hover */
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #007bff;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%; /* Full underline on hover */
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-dropdown:hover {
+  transform: scale(1.08);
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Profile Dropdown Alignment Fix */
+.profile-dropdown .profile-pic {
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  right: 0;
+  left: auto;
+  min-width: 170px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Smooth Fade-in Effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  padding: 12px 15px;
+  font-size: 16px; /* Bigger text */
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+  padding-left: 18px;
+}
+
+/* Mobile Responsive Fixes */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .navbar-collapse {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .nav-link, .dropdown-item {
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .profile-dropdown {
+    justify-content: center;
+  }
+}

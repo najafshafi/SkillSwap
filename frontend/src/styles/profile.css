@@ -1,0 +1,314 @@
+.profile-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.profile-image-label {
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+
+.profile-image {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.profile-placeholder {
+  width: 130px;
+  height: 130px;
+  background-color: #e9ecef;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(71, 118, 230, 0.9);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border: 2px solid white;
+}
+
+.edit-icon {
+  color: white;
+  font-size: 14px;
+}
+
+.profile-image-label:hover .edit-overlay {
+  opacity: 1;
+}
+
+.profile-image-label:hover .profile-image {
+  filter: brightness(0.9);
+}
+
+h5 {
+  color: #4776e6;
+  font-weight: 600;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #4776e6, #8e54e9);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #3a66d6, #7749d5);
+}
+
+.btn-success {
+  background: linear-gradient(to right, #28a745, #20c997);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #218838, #1cad85);
+}
+
+.text-primary {
+  color: #4776e6 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-image,
+  .profile-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .edit-overlay {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.profile-header {
+  background-color: #ff9800; /* Orange background */
+  border-radius: 10px;
+  padding: 50px; /* Increased padding for better spacing */
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  gap: 50px; /* More space between image & text */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Square Profile Image */
+.profile-image {
+  width: 260px; /* Slightly bigger size */
+  height: 260px;
+  border-radius: 10px; /* Square shape */
+  object-fit: cover;
+  border: 5px solid #fff; /* White border for a clean look */
+}
+
+/* If no image, use a larger user icon */
+.profile-icon {
+  font-size: 160px;
+  color: #fff;
+}
+
+/* User Info - Capitalized Name & More Spacing */
+.profile-header h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #222; /* Dark text for better visibility */
+  text-transform: uppercase; /* Makes user name ALL CAPS */
+  margin-bottom: 20px; /* Increased spacing */
+}
+
+.profile-header p {
+  font-size: 20px;
+  color: #333; /* Dark text for proper contrast */
+  margin: 15px 0; /* More vertical spacing */
+}
+
+/* Update Profile Button - Better Alignment & Spacing */
+.profile-header .btn {
+  background-color: #fff;
+  color: #e65100; /* Darker orange for better contrast */
+  font-weight: bold;
+  padding: 16px 30px; /* Increased button size */
+  border-radius: 8px;
+  border: 2px solid #e65100;
+  transition: all 0.3s ease-in-out;
+  margin-top: 10px; /* Adds space between button & text */
+}
+
+.profile-header .btn:hover {
+  background-color: #e65100;
+  color: #fff;
+}
+
+/* green section */
+
+/* Green Section - Contact Information */
+.contact-card {
+  background-color: transparent;
+  padding: 20px 0;
+  margin-top: 15px;
+}
+
+/* Heading Styling with Animated Underline */
+.contact-card h4 {
+  color: #14532d; /* Dark green */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 17px;
+  position: relative;
+}
+
+/* Underline Animation */
+.contact-card h4::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #2c7a2c;
+  margin-top: 7px;
+  transition: width 0.3s ease-in-out;
+}
+
+.contact-card h4:hover::after {
+  width: 90px; /* Expands slightly on hover */
+}
+
+/* Contact Information Styling */
+.contact-card p {
+  font-size: 17px;
+  color: #333;
+  margin: 14px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between icon and text */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Subtle hover effect */
+.contact-card p:hover {
+  transform: translateX(5px);
+}
+
+/* Icon Styling - Using Animated Icons */
+.contact-icon {
+  font-size: 22px;
+  color: #2c7a2c;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-card p:hover .contact-icon {
+  transform: scale(1.2);
+}
+
+.payment-badge {
+  font-size: 1rem;
+  padding: 8px 12px;
+  background: linear-gradient(to right, #4776e6, #8e54e9);
+  border: none;
+}
+
+.payment-method-card {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.payment-method-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.default-card {
+  border-color: #28a745;
+  background-color: #f0fff4;
+}
+
+.payment-method-add {
+  border: 2px dashed #dee2e6;
+  background-color: #f8f9fa;
+  height: 100%;
+  min-height: 100px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.payment-method-add:hover {
+  border-color: #4776e6;
+  background-color: #f0f2ff;
+}
+
+.transaction-table {
+  font-size: 0.9rem;
+}
+
+.transaction-table thead th {
+  border-top: none;
+  border-bottom: 2px solid #4776e6;
+  background-color: #f8f9fa;
+  color: #495057;
+  font-weight: 600;
+}
+
+.transaction-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.transaction-table tbody tr:hover {
+  background-color: #f0f2ff;
+}
+
+/* Make the payment badge responsive */
+@media (max-width: 576px) {
+  .payment-badge {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .transaction-table {
+    font-size: 0.8rem;
+  }
+}

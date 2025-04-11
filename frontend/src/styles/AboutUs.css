@@ -1,0 +1,280 @@
+/* Global Styling */
+.about-us {
+  font-family: "Poppins", sans-serif; /* Use Poppins for a modern look */
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: white;
+  padding: 80px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Sections */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 20px;
+}
+
+.section.reverse {
+  flex-direction: row-reverse;
+}
+
+.content {
+  width: 50%;
+  padding: 20px;
+}
+
+.content h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.image {
+  width: 50%;
+}
+
+.image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
+
+/* Features Section */
+.features {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+.feature-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+}
+
+/* Team Section */
+.team-section {
+  background: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.team-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.team-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  width: 230px;
+  text-align: center;
+}
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  border-radius: 12px;
+  z-index: 0;
+  opacity: 0;
+  filter: blur(15px);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(106, 17, 203, 0.5);
+  border-color: #6a11cb;
+}
+
+.team-card:hover::before {
+  opacity: 1;
+}
+
+.team-card * {
+  position: relative;
+  z-index: 1;
+}
+
+.member {
+  text-align: center;
+}
+
+.member img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.member img:hover {
+  transform: scale(1.1);
+}
+
+.member h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.member p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .feature-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Scoped Blob Page Styling */
+#blob-page .blob-image-container {
+  position: relative;
+  width: 400px; /* Increased width */
+  height: 400px; /* Increased height */
+  background: #f09;
+  background-image: linear-gradient(45deg, #3023AE 0%, #f09 100%);
+  box-shadow: -10px 10px 0 rgba(255, 255, 255, 0.07);
+  border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+  overflow: hidden; /* Ensure no parts overflow the shape */
+  animation: morph 10s linear infinite alternate; /* Morphing animation */
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+  }
+  100% {
+    border-radius: 40% 60%; /* Smooth morphing */
+  }
+}
+
+#blob-page .blob-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the blob */
+  transition: transform 0.3s ease-in-out; /* Adds hover effect */
+}
+
+#blob-page .blob-image-container img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* General Scoped Styling for Blob Page */
+#blob-page * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+

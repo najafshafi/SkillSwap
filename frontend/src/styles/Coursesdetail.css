@@ -1,0 +1,317 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Rating Section */
+  .text-warning {
+    font-size: 1.2rem;
+  }
+  
+  .video-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Buttons */
+  button {
+    font-weight: 600;
+  }
+  
+  /* Course Info Tabs */
+  .course-tabs {
+    display: flex;
+    gap: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+  }
+  
+  .course-tabs button {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s ease;
+  }
+  
+  .course-tabs button:hover {
+    text-decoration: underline;
+  }
+  
+  /* About Course */
+  .about-course {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* What Will You Learn */
+  .what-you-learn {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* Sidebar Cards */
+  .card {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Course Progress Bar */
+  .progress {
+    height: 12px;
+    border-radius: 10px;
+    background-color: #e9ecef;
+  }
+  
+  .progress-bar {
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  /* Instructor Card */
+  .card-body h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .course-tabs {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .video-container iframe {
+      height: 250px;
+    }
+  
+    .progress {
+      height: 10px;
+    }
+  }
+/* Card Styling */
+.card {
+    border: none;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Progress Bar Container */
+  .custom-progress-container {
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    padding: 6px;
+  }
+  
+  /* Progress Bar Styling */
+  .custom-progress-bar .progress-bar {
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    border-radius: 20px;
+    transition: width 0.6s ease-in-out;
+    height: 12px;
+    position: relative;
+  }
+  
+  /* Progress Label */
+  .progress-label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  /* Course Details Styling */
+  .course-details p {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Button Styling */
+  .btn-primary {
+    background: #007bff;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background: #0056b3;
+  }
+   /* Progress Bar Outer Container */
+.custom-progress-container {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 30px;
+    padding: 5px;
+    position: relative;
+    height: 25px;
+    margin-bottom: 20px;
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+  }
+  
+  /* Animated Progress Bar */
+  .custom-progress-bar {
+    width: 50%;  /* ✅ Ye ensure karega ke bar sirf 50% fill ho */
+    height: 100%;
+    background: linear-gradient(90deg, #ff4e50, #fc913a);
+    border-radius: 30px;
+    transition: width 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 3px 15px rgba(255, 78, 80, 0.5);
+  }
+  
+  /* Moving Wave Animation Effect */
+  .custom-progress-bar::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 70%);
+    top: 0;
+    left: -100%;
+    animation: waveMove 2s infinite linear;
+  }
+  
+  /* Wave Animation Keyframes */
+  @keyframes waveMove {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 100%;
+    }
+  }
+  
+  /* Progress Percentage Text */
+  .progress-text {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+  }
+  
+/* Sidebar Card Adjustment */
+.mb-4.p-4.shadow-lg.rounded {
+    margin-top: 50px;  /* ✅ Sidebar ko neeche shift karega */
+  }
+  
+  /* OR, if you want more spacing */
+  .course-sidebar {
+    margin-top: 50px; /* Adjust according to need */
+  }
+  .text-primary {
+    font-weight: bold;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;  /* ✅ Ensure karega ke buttons wrap ho jayen agar jagah kam ho */
+}
+
+.styled-button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    min-width: 120px; /* ✅ Har button ka minimum width set kiya hai */
+    text-align: center;
+}
+
+/* Button Hover Effect */
+.styled-button:hover {
+    color: #0056b3;
+    background: none;
+}
+
+.styled-button::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #0056b3;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.styled-button:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.styled-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* ✅ Mobile screens pe buttons ek doosre ke neeche aa jayenge */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .styled-button {
+        width: 100%;  /* ✅ Mobile pe full-width button */
+        max-width: 250px; /* ✅ But ek limit bhi rakhi takay bohot bada na ho */
+    }
+}
+/* Custom Styled Button */
+.enroll-button {
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient Effect */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Soft Shadow */
+}
+
+.enroll-button:hover {
+  background: linear-gradient(135deg, #0056b3, #004099);
+  transform: scale(1.05); /* Smooth Scale Effect */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}

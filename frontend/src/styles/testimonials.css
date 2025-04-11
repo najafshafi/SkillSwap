@@ -1,0 +1,107 @@
+/* ✨ Testimonials Section Styling */
+.testimonials-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f8f9fa; /* Light background for a premium look */
+  }
+  
+  /* ✨ Heading Styling with Animation */
+  .testimonials-heading {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a237e; /* Deep Blue */
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+  }
+  
+  .testimonials-subheading {
+    font-family: "Lora", serif;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out 0.5s forwards;
+  }
+  
+  /* ✨ Card Styling */
+  .testimonial-card {
+    background: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-in-out 0.8s forwards;
+  }
+  
+  /* ✨ Card Hover Effect */
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ✨ Name & Role Styling */
+  .testimonial-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .testimonial-role {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  /* ✨ Star Rating */
+  .testimonial-stars {
+    color: #ffcc00; /* Gold Stars */
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+  .testimonials-container {
+    margin-top: 0px !important; /* Reduce space above testimonials */
+    padding-top: 0 !important;
+  }
+  
+  .testimonials-container h2 {
+    margin-bottom: 20px; /* Reduce space below heading */
+  }
+  .courses-container {
+    margin-bottom: 30px !important; /* Reduce extra spacing below courses */
+  }
+  
+  
+  
+  /* ✨ Fade-in Up Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ✨ Responsive Design */
+  @media (max-width: 768px) {
+    .testimonials-heading {
+      font-size: 2rem;
+    }
+    .testimonials-subheading {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonials-heading {
+      font-size: 1.8rem;
+    }
+    .testimonials-subheading {
+      font-size: 1rem;
+    }
+  }
+  

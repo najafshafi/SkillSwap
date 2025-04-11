@@ -1,0 +1,189 @@
+/* 🌟 Beautiful Gradient Background */
+.courses-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  overflow-x: hidden;
+}
+
+/* Scrolling Section Fix */
+.courses-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.courses-container::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 8px;
+}
+
+/* 🏠 Sidebar Styling */
+.sidebar {
+  background: white;
+  height: 100vh;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+/* Sidebar Title */
+.sidebar-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+}
+
+.sidebar-title:after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #007bff;
+  border-radius: 5px;
+}
+
+/* ✅ Category Styling */
+.list-group-item {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #495057;
+  transition: all 0.2s ease;
+  border-left: 0;
+  border-right: 0;
+}
+
+.list-group-item:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+}
+
+.list-group-item.active {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+/* Search container */
+.search-container {
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+/* 🎨 Course Cards */
+.course-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.course-img {
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.course-card:hover .course-img {
+  transform: scale(1.05);
+}
+
+.course-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.course-card:hover .course-overlay {
+  opacity: 1;
+}
+
+.course-title {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.transition-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transition-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Modal Styling */
+.booking-modal .modal-content,
+.payment-modal .modal-content {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.booking-modal .modal-header,
+.payment-modal .modal-header {
+  border-bottom: none;
+}
+
+.selected-course-info {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .sidebar {
+    height: auto;
+    position: relative;
+    margin-bottom: 15px;
+  }
+
+  .course-img {
+    height: 150px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-footer {
+    flex-direction: column;
+  }
+
+  .modal-footer button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* Search styles */
+.search-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #ced4da !important;
+}
+
+/* Make the search container more prominent */
+.search-container {
+  margin-bottom: 2rem !important;
+}
+
+.search-container .form-control {
+  font-size: 1.1rem;
+}
