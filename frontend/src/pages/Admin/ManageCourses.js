@@ -219,7 +219,7 @@ const ManageCourses = () => {
                                             </td>
                                             <td>{course.title}</td>
                                             <td>
-                                                <Badge bg="info">{course.category}</Badge>
+                                               {course.category}
                                             </td>
                                             <td>${course.price.toFixed(2)}</td>
                                             <td>
